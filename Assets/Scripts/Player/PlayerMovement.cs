@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour {
 	public static float speed;
 	string lastKey = "w";
 
+    int xdir = 0;
+    int ydir = 0;
+
 	// Use this for initialization
 	void Start () {
 		speed = speedInit;		
@@ -20,48 +23,48 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float x = 0;
-        float y = 0;
 
 		// If the user is holding down the same key as the last time, we should increase their speed
 		if (Input.GetKey(lastKey)) {
-			speed += acceleration * Time.deltaTime;
+            Debug.Log("Accelerating");
+            speed += acceleration * Time.deltaTime;
 		} else {
+            Debug.Log("Decelerating");
 			speed -= deceleration * Time.deltaTime;
 		}
 
 		// The player's speed should never go over speedMax or under speedMin
-		if (speed > speedMax) {
-			speed = speedMax;
-		} else if (speed < speedMin) {
-			speed = speedMin;
-		}
+        speed = Mathf.Clamp(speed, speedMin, speedMax);
 
         if (Input.GetKey("w"))
         {
-            y = 1;
+            ydir = 1;
+            xdir = 0;
             lastKey = "w";
         }
         else if (Input.GetKey("a"))
         {
-            x = -1;
+            ydir = 0;
+            xdir = -1;
             lastKey = "a";
         }
         else if (Input.GetKey("s"))
         {
-            y = -1;
+            ydir = -1;
+            xdir = 0;
             lastKey = "s";
         }
         else if (Input.GetKey("d"))
         {
-            x = 1;
+            ydir = 0;
+            xdir = 1;
             lastKey = "d";
         }
 
         // Basic movement code with slight adjustments
         // From: https://unity3d.com/learn/tutorials/topics/multiplayer-networking/creating-player-movement-single-player
-        x = x * Time.deltaTime * speed;
-		y = y * Time.deltaTime * speed;
+        var x = xdir * Time.deltaTime * speed;
+		var y = ydir * Time.deltaTime * speed;
 
 		transform.Translate(x, y, 0);
 
