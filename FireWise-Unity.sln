@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FireWise-Unity", "FireWise-Unity.csproj", "{F9C4C1F3-DA4F-8D35-D0F0-95867918EED2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FireWise-Unity", "Assembly-CSharp.csproj", "{E4E636CC-C083-65B3-69FC-B2E8DD5DC032}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F9C4C1F3-DA4F-8D35-D0F0-95867918EED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9C4C1F3-DA4F-8D35-D0F0-95867918EED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9C4C1F3-DA4F-8D35-D0F0-95867918EED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9C4C1F3-DA4F-8D35-D0F0-95867918EED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4E636CC-C083-65B3-69FC-B2E8DD5DC032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4E636CC-C083-65B3-69FC-B2E8DD5DC032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4E636CC-C083-65B3-69FC-B2E8DD5DC032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4E636CC-C083-65B3-69FC-B2E8DD5DC032}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

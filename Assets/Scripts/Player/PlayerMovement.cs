@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	public float speedInit = 3f;
-	public static float speedMax = 8f; // Max speed. I don't know why this doesn't show up in the editor.
-	public static float speedMin = 2f;
+	public static float speedMax = 1.5f; // Max speed. I don't know why this doesn't show up in the editor.
+	public static float speedMin = 0.2f;
 	public float acceleration = 0.5f;
 	public float deceleration = 0.25f;
 	
@@ -26,10 +26,10 @@ public class PlayerMovement : MonoBehaviour {
 
 		// If the user is holding down the same key as the last time, we should increase their speed
 		if (Input.GetKey(lastKey)) {
-            Debug.Log("Accelerating");
+            //Debug.Log("Accelerating");
             speed += acceleration * Time.deltaTime;
 		} else {
-            Debug.Log("Decelerating");
+            //Debug.Log("Decelerating");
 			speed -= deceleration * Time.deltaTime;
 		}
 
@@ -68,6 +68,6 @@ public class PlayerMovement : MonoBehaviour {
 
 		transform.Translate(x, y, 0);
 
-        Debug.Log(speed);
+        //Debug.Log(speed);
 	}
 }
