@@ -16,6 +16,7 @@ MonoBehaviour:
   - {fileID: 114922275137045220}
   - {fileID: 114326589712559256}
   - {fileID: 114906741527704960}
+  - {fileID: 114739816685307988}
 --- !u!114 &114326589712559256
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -33,11 +34,11 @@ MonoBehaviour:
     value: 1
   spectralLut:
     overrideState: 1
-    value: {fileID: 0}
+    value: {fileID: 2800000, guid: 63c8a6d5fdaa0a64db82bfd16a049986, type: 3}
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0.084
+    value: 0
   fastMode:
     overrideState: 1
     value: 0
@@ -66,6 +67,49 @@ MonoBehaviour:
     overrideState: 1
     value: 0.3
   lumContrib:
+    overrideState: 1
+    value: 1
+--- !u!114 &114739816685307988
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
+  m_Name: Vignette
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  mode:
+    overrideState: 1
+    value: 0
+  color:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 1}
+  center:
+    overrideState: 1
+    value: {x: 0.5, y: 0.5}
+  intensity:
+    overrideState: 1
+    value: 0
+  smoothness:
+    overrideState: 1
+    value: 0.377
+  roundness:
+    overrideState: 1
+    value: 1
+  rounded:
+    overrideState: 1
+    value: 1
+  mask:
+    overrideState: 1
+    value: {fileID: 0}
+    defaultState: 1
+  opacity:
     overrideState: 1
     value: 1
 --- !u!114 &114906741527704960
@@ -1395,13 +1439,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 5
+    value: 4.5
   threshold:
     overrideState: 1
     value: 1
   softKnee:
     overrideState: 1
-    value: 0.5
+    value: 0
   clamp:
     overrideState: 1
     value: 65472
@@ -1416,10 +1460,10 @@ MonoBehaviour:
     value: {r: 1, g: 1, b: 1, a: 1}
   fastMode:
     overrideState: 1
-    value: 0
+    value: 1
   dirtTexture:
     overrideState: 1
-    value: {fileID: 0}
+    value: {fileID: 2800000, guid: 72df053d2c926ec44855f3dd483e0568, type: 3}
     defaultState: 1
   dirtIntensity:
     overrideState: 1
