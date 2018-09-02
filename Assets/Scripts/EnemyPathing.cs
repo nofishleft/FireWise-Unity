@@ -16,6 +16,7 @@ public class EnemyPathing : MonoBehaviour {
     PlayerMovement trackedPlayer;
     Vector3 lastSeenLocation;
     public int playerLayerID = 10;
+    public float damageSpeed = 0.5f;
 
     public float speed = 4f;
 
@@ -52,13 +53,20 @@ public class EnemyPathing : MonoBehaviour {
         }
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.layer == playerLayerID) {
+            Vector3 v = damageSpeed * Vector3.Normalize(transform.forward);
+            PlayerHealth.health -= 0.5f * PlayerHealth.healthMax;
+            trackedPlayer.GetComponent<Rigidbody2D>().velocity = damageSpeed*Vector3.Normalize(transform.forward);
+            GetComponent<Rigidbody2D>().velocity = -v;
+        }
+    }
+
     bool enemyStillThere() {
         Vector3 separationVector = trackedPlayer.transform.position - transform.position;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(separationVector.x, separationVector.y), visionDistance);
-        if (hit.collider != null && hit.collider.gameObject.layer == playerLayerID)
-        {
-            return true;
-        }
+        if (hit.collider != null && hit.collider.gameObject.layer == playerLayerID) return true;
         return false;
         
     }
