@@ -20,6 +20,5 @@ public class ScoreCalc_UI : MonoBehaviour {
         // Move HealthIndicator from 90 degress to -90 degrees as their health goes down
         var score = (System.Math.Round(900 * scorePercent)*10).ToString().PadLeft(4,'0');
         scoreText.text = score;
-        Debug.Log(score);
     }
 }

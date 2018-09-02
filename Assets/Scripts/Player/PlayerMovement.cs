@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour {
     // If the player collides with a wall, reverse their vector and set their speed to the minimum
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.layer == wallID)
+        if (col.gameObject.layer == wallID && col.otherCollider.CompareTag("PlayerCollide"))
             // Debug.Log("Player collision");
         {
             xdir *= -1;
