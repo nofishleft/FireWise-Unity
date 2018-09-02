@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour {
     public int wallID = 0; // Layer number of the walls that the player should bounce off
     public float bounceDmg = 10;
 
+    public static bool wallTimeOut = false;
+    public static System.DateTime wallTimeOutTime = System.DateTime.Now;
+
     // If the player collides with a wall, reverse their vector and set their speed to the minimum
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -38,6 +41,10 @@ public class PlayerMovement : MonoBehaviour {
             ydir *= -1;
             speed = speedMin;
             PlayerHealth.health -= bounceDmg;
+            AudioSource audio = gameObject.AddComponent<AudioSource>();
+            audio.PlayOneShot((AudioClip)Resources.Load("Assets/Sfx/Gameplay/Ignition soundbetter_mixdown.wav"));
+            wallTimeOut = true;
+            wallTimeOutTime = System.DateTime.Now.AddSeconds(0.1f);
         }
     }
 
@@ -81,30 +88,36 @@ public class PlayerMovement : MonoBehaviour {
         } else {
             speed = 0f;
         }
+        if(wallTimeOut && System.DateTime.Compare(wallTimeOutTime, System.DateTime.Now) < 0) {
+            // Then we have passed the time, update wallTimeOut
+            wallTimeOut = false;
+        }
 
-        if (Input.GetKey("w"))
-        {
-            ydir = 1;
-            xdir = 0;
-            lastKey = "w";
-        }
-        else if (Input.GetKey("a"))
-        {
-            ydir = 0;
-            xdir = -1;
-            lastKey = "a";
-        }
-        else if (Input.GetKey("s"))
-        {
-            ydir = -1;
-            xdir = 0;
-            lastKey = "s";
-        }
-        else if (Input.GetKey("d"))
-        {
-            ydir = 0;
-            xdir = 1;
-            lastKey = "d";
+        if (!wallTimeOut) {
+            if (Input.GetKey("w"))
+            {
+                ydir = 1;
+                xdir = 0;
+                lastKey = "w";
+            }
+            else if (Input.GetKey("a"))
+            {
+                ydir = 0;
+                xdir = -1;
+                lastKey = "a";
+            }
+            else if (Input.GetKey("s"))
+            {
+                ydir = -1;
+                xdir = 0;
+                lastKey = "s";
+            }
+            else if (Input.GetKey("d"))
+            {
+                ydir = 0;
+                xdir = 1;
+                lastKey = "d";
+            }
         }
 
         // Basic movement code with slight adjustments
