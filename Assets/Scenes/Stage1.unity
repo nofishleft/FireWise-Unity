@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 1149048420}
   - component: {fileID: 1149048419}
   - component: {fileID: 1149048422}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1416352391}
   - component: {fileID: 1416352390}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,7 +847,7 @@ GameObject:
   - component: {fileID: 1755404747}
   - component: {fileID: 1755404749}
   - component: {fileID: 1755404748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -929,7 +929,7 @@ GameObject:
   - component: {fileID: 2001712204}
   - component: {fileID: 2001712203}
   - component: {fileID: 2001712205}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,6 +950,8 @@ MonoBehaviour:
   speedInit: 0.1
   acceleration: 1
   deceleration: 2
+  wallID: 9
+  bounceDmg: 10
 --- !u!114 &2001712199
 MonoBehaviour:
   m_ObjectHideFlags: 0

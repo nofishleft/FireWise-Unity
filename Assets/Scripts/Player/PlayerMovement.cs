@@ -18,13 +18,32 @@ public class PlayerMovement : MonoBehaviour {
     public static int xdir = 0;
     public static int ydir = 0;
 
-	// Use this for initialization
-	void Start () {
+    public int wallID = 0; // Layer number of the walls that the player should bounce off
+    public float bounceDmg = 10;
+
+    // If the player collides with a wall, reverse their vector and set their speed to the minimum
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.layer == wallID)
+            Debug.Log("Player collision");
+        {
+            xdir *= -1;
+            ydir *= -1;
+            speed = speedMin;
+            PlayerHealth.health -= bounceDmg;
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
 		speed = speedInit;		
 	}
 
-        // Detect if user is pressing both A&D or W&S (opposites)
-        bool opposites = false;
+    private void Update()
+    {
+
+    // Detect if user is pressing both A&D or W&S (opposites)
+    bool opposites = false;
         if (Input.GetKey("w") && Input.GetKey("s") || Input.GetKey("a") && Input.GetKey("d")) {
             opposites = true;
         }
