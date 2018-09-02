@@ -5477,10 +5477,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 599356250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf16cc042ad7d284f8cd9084348d96f7, type: 3}
+  m_Script: {fileID: 11500000, guid: da90a7a6838cba94aa3604383a3d3c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Level1
+  playerLayerID: 10
 --- !u!1 &813376355
 GameObject:
   m_ObjectHideFlags: 0
@@ -6169,11 +6169,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4060143158276388, guid: 172b2cb7435f37040bd81590cf9e55d6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.1847
+      value: 0.106
       objectReference: {fileID: 0}
     - target: {fileID: 4060143158276388, guid: 172b2cb7435f37040bd81590cf9e55d6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.4961
+      value: -1.651
       objectReference: {fileID: 0}
     - target: {fileID: 4060143158276388, guid: 172b2cb7435f37040bd81590cf9e55d6, type: 2}
       propertyPath: m_LocalPosition.z

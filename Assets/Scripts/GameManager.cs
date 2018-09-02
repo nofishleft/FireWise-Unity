@@ -37,13 +37,13 @@ public class GameManager : MonoBehaviour {
     public void Defeat()
     {
         GameManager.beatLevel[currentScene] = -1;
-        SceneManager.LoadSceneAsync(scenes);
+        // SceneManager.LoadSceneAsync(scenes);
     }
 
     // Use this for initialization
     void Start () {
-        scenes = SceneManager.sceneCountInBuildSettings - 1; // Subtract 1 as we don't count the main menu as a playable level
-        // Debug.Log(scenes);
+        scenes = SceneManager.sceneCountInBuildSettings - 1; // Subtract 1 as scene ID's start from zero
+        Debug.Log("Scenes = " + scenes);
         beatLevel = new int[scenes];
     }
 
@@ -92,16 +92,18 @@ public class GameManager : MonoBehaviour {
                 return;
             }
 
-        // While there are still scenes to be run, play them one after the other
+        // While there are still scenes to be run, play them one after the other.
+        // If they player gets through all the available scenes they'll be returned to the main menu.
         if (currentScene < scenes)
         {
-            SceneManager.LoadScene(currentScene);
+            SceneManager.LoadSceneAsync(currentScene);
             Debug.Log("Active scene buildID: " + SceneManager.GetActiveScene().buildIndex);
         } else
         {
             currentScene = 0;
             playing = false;
             Debug.Log("Playing = " + playing + " - due to end of scenes");
+            SceneManager.LoadSceneAsync(scenes);
         }    
     }
 
