@@ -52,9 +52,9 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update()
     {
-
-    // Detect if user is pressing both A&D or W&S (opposites)
-    bool opposites = false;
+        player = this;
+        // Detect if user is pressing both A&D or W&S (opposites)
+        bool opposites = false;
         if (Input.GetKey("w") && Input.GetKey("s") || Input.GetKey("a") && Input.GetKey("d")) {
             opposites = true;
         }
