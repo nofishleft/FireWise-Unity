@@ -16,9 +16,11 @@ public class EnemyPathing : MonoBehaviour {
     PlayerMovement trackedPlayer;
     Vector3 lastSeenLocation;
     public int playerLayerID = 10;
-    public float damageSpeed = 0.5f;
+    public float knockbackSpeed = 0.5f;
+    public float damage = 20f;
 
     public float speed = 4f;
+    public float pathSpeed = 1f;
 
     void Start() {
 
@@ -31,7 +33,10 @@ public class EnemyPathing : MonoBehaviour {
         separationVector.z = 0;
         if (separationVector.sqrMagnitude <= visionDistance * visionDistance) {
             Vector3 forwardVector = transform.forward;
+            Debug.Log(forwardVector);
+            Debug.Log(separationVector);
             float ang = Vector3.Angle(forwardVector, separationVector);
+            Debug.Log(ang);
             if (ang <= fov / 2) {
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(forwardVector.x,forwardVector.y));
                 if (hit.collider != null && hit.collider.gameObject.layer == playerLayerID) {
@@ -55,10 +60,11 @@ public class EnemyPathing : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.layer == playerLayerID) {
-            Vector3 v = damageSpeed * Vector3.Normalize(transform.forward);
-            PlayerHealth.health -= 0.5f * PlayerHealth.healthMax;
-            trackedPlayer.GetComponent<Rigidbody2D>().velocity = damageSpeed*Vector3.Normalize(transform.forward);
+        if (col != null && col.gameObject.layer == playerLayerID)
+        {
+            Vector3 v = knockbackSpeed * Vector3.Normalize(transform.forward);
+            if (PlayerHealth.health >= 0f) PlayerHealth.health -= damage;
+            PlayerMovement.player.GetComponent<Rigidbody2D>().velocity = knockbackSpeed * Vector3.Normalize(transform.forward);
             GetComponent<Rigidbody2D>().velocity = -v;
         }
     }
@@ -73,11 +79,12 @@ public class EnemyPathing : MonoBehaviour {
 
     void walkEnemy() {
         // rotate towards the target
-        Vector3 rot = Vector3.RotateTowards(transform.forward, lastSeenLocation - transform.position, speed * Time.deltaTime, 0.0f);
-        transform.forward = rot;
-        // move towards the target
-        Vector3 tra = Vector3.MoveTowards(transform.position, lastSeenLocation, speed * Time.deltaTime);
-        transform.position = tra;
+        Vector3 targetdiff = targetWayPoint.position - transform.position;
+        targetdiff.x = transform.forward.x;
+        targetdiff.y = transform.forward.y;
+        transform.forward = Vector3.RotateTowards(transform.forward, targetdiff, speed * Time.deltaTime, 0.0f);
+
+        transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.position, speed * Time.deltaTime);
 
         if (transform.position == lastSeenLocation)
         {
@@ -90,15 +97,16 @@ public class EnemyPathing : MonoBehaviour {
     }
 
     void walkPath() {
-            // rotate towards the target
-            Vector3 rot = Vector3.RotateTowards(transform.forward, targetWayPoint.position - transform.position, speed * Time.deltaTime, 0.0f);
-            transform.forward = rot;
+        // rotate towards the target
+        Vector3 targetdiff = targetWayPoint.position - transform.position;
+        targetdiff.x = transform.forward.x;
+        targetdiff.y = transform.forward.y;
+        transform.forward = Vector3.RotateTowards(transform.forward, targetdiff, speed * Time.deltaTime, 0.0f);
 
-            // move towards the target
-            Vector3 tra = Vector3.MoveTowards(transform.position, targetWayPoint.position, speed * Time.deltaTime);
-            transform.position = tra;
+        // move towards the target
+        transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.position, pathSpeed * Time.deltaTime);
 
-            if (transform.position == targetWayPoint.position)
+        if (transform.position == targetWayPoint.position)
             {
                 currentWayPoint++;
                 if (wayPointList.Length == currentWayPoint) currentWayPoint = 0;
