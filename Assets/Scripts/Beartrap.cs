@@ -13,10 +13,15 @@ public class Beartrap : MonoBehaviour {
 
     Animator anim;
 
+    public static AudioSource bounceaudio;
+    public static AudioClip bounceclip;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
         anim.SetBool("open", true);
+        bounceaudio = gameObject.AddComponent<AudioSource>();
+        bounceclip = (AudioClip)Resources.Load("trap");
     }
 
     // If the player walks into this trap, inflict damage and increment their debuff modifiers
@@ -25,10 +30,12 @@ public class Beartrap : MonoBehaviour {
         Debug.Log(collision.gameObject.layer);
         if ((collision.gameObject.layer == playerLayerID) && anim.GetBool("open"))
         {
+            bounceaudio.PlayOneShot(bounceclip);
             PlayerHealth.health -= damage;
             PlayerMovement.slowDuration += duration;
             PlayerMovement.slowPercent = slowPercent;
             anim.SetBool("open", false);
+
         }
 
     }
