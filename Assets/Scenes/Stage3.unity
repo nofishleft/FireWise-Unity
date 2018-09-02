@@ -527,6 +527,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114463457254301492, guid: 172b2cb7435f37040bd81590cf9e55d6,
+        type: 2}
+      propertyPath: speedInstMin
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114463457254301492, guid: 172b2cb7435f37040bd81590cf9e55d6,
+        type: 2}
+      propertyPath: speedInstMax
+      value: 1.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 172b2cb7435f37040bd81590cf9e55d6, type: 2}
   m_IsPrefabAsset: 0
@@ -5506,6 +5516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da90a7a6838cba94aa3604383a3d3c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLayerID: 10
 --- !u!1 &788023563
 GameObject:
   m_ObjectHideFlags: 0
