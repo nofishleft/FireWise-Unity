@@ -26,7 +26,7 @@ public class EnemyPathing : MonoBehaviour {
     float xdir;
     float ydir;
 
-    public float speed = 4f;
+    public float speed = 0.4f;
     public float rotationalSpeed = 50f;
     public float pathSpeed = 1f;
 
@@ -127,18 +127,18 @@ public class EnemyPathing : MonoBehaviour {
         float newy = 0f;
         if (x > y)
         {
-            newx += Mathf.Clamp((vectorToTarget.x / x) * speed * Time.deltaTime, -x, x);
+            newx += Mathf.Clamp((vectorToTarget.x / x) * pathSpeed * Time.deltaTime, -x, x);
             xdir = newx / Mathf.Abs(newx);
             ydir = 0f;
         }
         else
         {
-            newy += Mathf.Clamp((vectorToTarget.y / y) * speed * Time.deltaTime, -y, y);
+            newy += Mathf.Clamp((vectorToTarget.y / y) * pathSpeed * Time.deltaTime, -y, y);
             ydir = newy / Mathf.Abs(newy);
             xdir = 0f;
         }
         Vector3 dir = Vector3.Normalize(vectorToTarget);
-        float sp = Mathf.Clamp(vectorToTarget.magnitude,-speed*Time.deltaTime,speed*Time.deltaTime);
+        float sp = Mathf.Clamp(vectorToTarget.magnitude,-pathSpeed*Time.deltaTime,pathSpeed*Time.deltaTime);
         transform.position += sp * dir;
     }
 
