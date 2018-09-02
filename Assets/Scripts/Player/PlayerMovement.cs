@@ -41,8 +41,6 @@ public class PlayerMovement : MonoBehaviour {
             ydir *= -1;
             speed = speedMin;
             PlayerHealth.health -= bounceDmg;
-            AudioSource audio = gameObject.AddComponent<AudioSource>();
-            audio.PlayOneShot((AudioClip)Resources.Load("Assets/Sfx/Gameplay/Ignition soundbetter_mixdown.wav"));
             wallTimeOut = true;
             wallTimeOutTime = System.DateTime.Now.AddSeconds(0.1f);
         }
