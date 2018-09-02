@@ -278,7 +278,7 @@ MonoBehaviour:
   acceleration: 1
   deceleration: 2
   wallID: 9
-  bounceDmg: 1
+  bounceDmg: 4
 --- !u!114 &114420948300800034
 MonoBehaviour:
   m_ObjectHideFlags: 1

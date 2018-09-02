@@ -34,8 +34,8 @@ public class DeathAlert : MonoBehaviour {
         if (PlayerHealthPercent < 0.5) {
             GrainSettings.intensity.Override(0.5f - PlayerHealthPercent);
         }
-        if (PlayerHealthPercent < 0.3) {
-            VignetteSettings.intensity.Override(0.3f - PlayerHealthPercent);
+        if (PlayerHealthPercent < 0.5) {
+            VignetteSettings.intensity.Override(0.5f - PlayerHealthPercent);
         }
         ChromaticAberrationSettings.intensity.Override(1 - PlayerHealthPercent);
         BloomSettings.dirtIntensity.Override((1 - PlayerHealthPercent) * 5);
