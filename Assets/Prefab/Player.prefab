@@ -78,7 +78,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4498503205297998}
-  - component: {fileID: 70972678863560342}
+  - component: {fileID: 58927355806201526}
   m_Layer: 11
   m_Name: Hitbox
   m_TagString: Untagged
@@ -132,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1020333018103302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.235, y: -0.954, z: 0.1}
+  m_LocalPosition: {x: 0.99751294, y: -2.6648903, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4391853001528920}
@@ -216,8 +216,8 @@ CircleCollider2D:
   m_Offset: {x: -0.01, y: -0.05}
   serializedVersion: 2
   m_Radius: 0.03
---- !u!70 &70972678863560342
-CapsuleCollider2D:
+--- !u!58 &58927355806201526
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -225,12 +225,12 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008406401, y: -0.013859898}
-  m_Size: {x: 0.090780735, y: 0.14589101}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.05}
+  serializedVersion: 2
+  m_Radius: 0.03
 --- !u!81 &81879219268285484
 AudioListener:
   m_ObjectHideFlags: 1
