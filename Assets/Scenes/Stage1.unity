@@ -890,7 +890,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4677659125410520, guid: 4d32a44b541b4654f853fba98e7dde1f, type: 2}
       propertyPath: m_RootOrder
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 1113967649156534, guid: 4d32a44b541b4654f853fba98e7dde1f, type: 2}
       propertyPath: m_Name
@@ -7063,10 +7063,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 599356250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf16cc042ad7d284f8cd9084348d96f7, type: 3}
+  m_Script: {fileID: 11500000, guid: da90a7a6838cba94aa3604383a3d3c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Level1
 --- !u!1 &634644428 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1113967649156534, guid: 4d32a44b541b4654f853fba98e7dde1f,
@@ -10739,7 +10738,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4677659125410520, guid: 4d32a44b541b4654f853fba98e7dde1f, type: 2}
       propertyPath: m_RootOrder
-      value: 26
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1113967649156534, guid: 4d32a44b541b4654f853fba98e7dde1f, type: 2}
       propertyPath: m_Name
