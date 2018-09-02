@@ -1085,7 +1085,11 @@ MonoBehaviour:
   acceleration: 1
   deceleration: 2
   wallID: 9
+<<<<<<< Updated upstream
   bounceDmg: 3
+=======
+  bounceDmg: 5
+>>>>>>> Stashed changes
 --- !u!114 &2001712199
 MonoBehaviour:
   m_ObjectHideFlags: 0
