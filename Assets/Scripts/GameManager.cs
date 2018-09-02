@@ -81,10 +81,14 @@ public class GameManager : MonoBehaviour {
             {
                 Debug.Log("Beat Level");
                 currentScene++;
-            } else
+            } else if (beatLevel[currentScene] == -1)
             {
                 // If the player is defeated, just restart the current scene.
                 Debug.Log("Playing = " + playing + " - due to defeat");
+                beatLevel[currentScene] = 0;
+            } else
+            {
+                // If we get here, the player hasn't won or lost yet, so do nothing.
                 return;
             }
 

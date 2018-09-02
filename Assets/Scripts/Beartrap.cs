@@ -16,6 +16,7 @@ public class Beartrap : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
+        anim.SetBool("open", false);
     }
 
     // If the player walks into this trap, inflict damage and increment their debuff modifiers
