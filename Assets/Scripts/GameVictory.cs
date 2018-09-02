@@ -14,10 +14,12 @@ public class GameVictory : MonoBehaviour
     public int playerLayerID = 10; // Layer ID of the player
 
     float timeToWait = 0f;
+    bool victory = false;
 
     private void Start()
     {
         timeToWait = Mathf.Max(fadePanelDuration, fadeTextDuration);
+        victory = false;
     }
 
     // If the player reaches the target area in a scene, they have won
@@ -30,14 +32,23 @@ public class GameVictory : MonoBehaviour
             Debug.Log("Player Victory");
             fadeText.CrossFadeAlpha(255, fadeTextDuration, false);
             fadePanel.CrossFadeAlpha(255, fadePanelDuration, false);
+        }
+    }
+
+    private void Update()
+    {
+        if (victory)
+        {
             if (timeToWait > 0)
             {
                 timeToWait -= Time.deltaTime;
                 return;
-            } else
+            }
+            else
             {
                 GameManager.instance.Victory();
-            } 
+            }
         }
     }
+
 }
