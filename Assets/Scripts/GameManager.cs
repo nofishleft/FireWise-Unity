@@ -37,19 +37,19 @@ public class GameManager : MonoBehaviour {
     public void Defeat()
     {
         GameManager.beatLevel[currentScene] = -1;
+        SceneManager.LoadSceneAsync(scenes);
     }
 
     // Use this for initialization
     void Start () {
         scenes = SceneManager.sceneCountInBuildSettings - 1; // Subtract 1 as we don't count the main menu as a playable level
-        Debug.Log(scenes);
+        // Debug.Log(scenes);
         beatLevel = new int[scenes];
     }
 
     // Update is called once per frame
     void Update() {
 
-        Debug.Log("Playing = " + playing);
         // Load the first level and wait until the player reaches some outcome.
         // If they get to the end of that level, load the next level, if not, display 
         // their score before taking them back to the main menu
@@ -60,20 +60,20 @@ public class GameManager : MonoBehaviour {
 
     public void PlayGame()
     {
+
         playing = true;
+        Debug.Log("Playing = " + playing);
     }
 
     public void ExitGame()
     {
         Debug.Log("Game quit");
         Application.Quit();
-
     }
 
-    void NextLevel() {
+    void NextLevel() { 
         
-        Debug.Log("Active scene buildID: " + SceneManager.GetActiveScene().buildIndex);
-        Debug.Log("Current level outcome: " + beatLevel[currentScene]);
+        // Debug.Log("Current level outcome: " + beatLevel[currentScene]);
 
         // If a scene is currently running, do nothing until it reaches some outcome
         if (SceneManager.GetActiveScene().buildIndex == currentScene)
@@ -81,25 +81,29 @@ public class GameManager : MonoBehaviour {
             {
                 Debug.Log("Beat Level");
                 currentScene++;
-            } else if (beatLevel[currentScene] == -1)
-            {
-                currentScene = 0;
-                playing = false;
-                return;
             } else
             {
+                // If the player is defeated, just restart the current scene.
+                Debug.Log("Playing = " + playing + " - due to defeat");
                 return;
             }
 
         // While there are still scenes to be run, play them one after the other
         if (currentScene < scenes)
         {
-            SceneManager.LoadSceneAsync(currentScene);
+            SceneManager.LoadScene(currentScene);
+            Debug.Log("Active scene buildID: " + SceneManager.GetActiveScene().buildIndex);
         } else
         {
             currentScene = 0;
             playing = false;
+            Debug.Log("Playing = " + playing + " - due to end of scenes");
         }    
+    }
 
+    // Reset progress so that the player can start again
+    private void Reset()
+    {
+        
     }
 }

@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.layer == wallID)
-            Debug.Log("Player collision");
+            // Debug.Log("Player collision");
         {
             xdir *= -1;
             ydir *= -1;
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		// If the user is holding down the same key as the last time, we should increase their speed
 		if (Input.GetKey(lastKey) && !opposites) {
-            Debug.Log(opposites);
+            // Debug.Log(opposites);
             //Debug.Log("Accelerating");
             speed += acceleration * Time.deltaTime;
 		} else if(Input.anyKey) {

@@ -13,12 +13,12 @@ public class DefeatConditions : MonoBehaviour {
 		
         if (PlayerHealth.health < 0)
         {
-            Debug.Log("Player dead");
+            // Debug.Log("Player dead");
             if (waiting)
             {
-                Debug.Log("Player defeated");
+                // Debug.Log("Player defeated");
                 timeToWait -= Time.deltaTime;
-                if (timeToWait < defeatDelay)
+                if (timeToWait < 0)
                 {
                     waiting = false;
                     GameManager.instance.Defeat();

@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 114742000932710366}
   - component: {fileID: 81874720196230172}
   - component: {fileID: 58894856272617684}
+  - component: {fileID: 114319565780634086}
   m_Layer: 10
   m_Name: Player 1
   m_TagString: Untagged
@@ -246,6 +247,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114319565780634086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1602907776278374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 874812571367ccb45b9fe9f7b63f58f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defeatDelay: 6
 --- !u!114 &114349888903179690
 MonoBehaviour:
   m_ObjectHideFlags: 1
