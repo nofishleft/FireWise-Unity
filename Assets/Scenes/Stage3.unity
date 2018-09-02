@@ -5705,7 +5705,7 @@ Prefab:
     - target: {fileID: 224964830609820052, guid: c6305e76b7b9ad54a89d255753184685,
         type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 224964830609820052, guid: c6305e76b7b9ad54a89d255753184685,
         type: 2}
@@ -5962,6 +5962,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4293944914359802, guid: ea35eb3d2d71ba4418713af6996cf0af, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212872699983595292, guid: ea35eb3d2d71ba4418713af6996cf0af,
+        type: 2}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
