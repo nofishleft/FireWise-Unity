@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
     public void Defeat()
     {
         GameManager.beatLevel[currentScene] = -1;
-        // SceneManager.LoadSceneAsync(scenes);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex); // Restart the current scene until the player wins
     }
 
     // Use this for initialization
@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour {
 
     public void PlayGame()
     {
-
         playing = true;
         Debug.Log("Playing = " + playing);
     }
@@ -73,8 +72,9 @@ public class GameManager : MonoBehaviour {
 
     void NextLevel() { 
         
-        Debug.Log("Current level outcome: " + beatLevel[currentScene]);
+        //Debug.Log("Current level outcome: " + beatLevel[currentScene]);
         Debug.Log("Active scene buildID: " + SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Current scene ID: " + currentScene);
 
         // If a scene is currently running, do nothing until it reaches some outcome
         if ((SceneManager.GetActiveScene().buildIndex) == currentScene)
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour {
             {
                 // If the player is defeated, just restart the current scene.
                 Debug.Log("Playing = " + playing + " - due to defeat");
-                beatLevel[currentScene] = 1;
+                return;
             } else
             {
                 // If we get here, the player hasn't won or lost yet, so do nothing.
@@ -104,13 +104,18 @@ public class GameManager : MonoBehaviour {
             currentScene = 0;
             playing = false;
             Debug.Log("Playing = " + playing + " - due to end of scenes");
-            SceneManager.LoadSceneAsync(scenes);
+            SceneManager.LoadSceneAsync(0);
         }    
     }
 
     // Reset progress so that the player can start again
     private void Reset()
     {
-        
+        beatLevel = new int[scenes]; // 1 = beat level, -1 = died, 0 = initial 
+        scores = new int[scenes];
+
+        currentScene = 1; // First level starts at build index 1. The main menu should be the first scene in the build settings.
+
+        playing = false;
     }
 }
