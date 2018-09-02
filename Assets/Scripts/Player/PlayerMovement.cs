@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour {
     public float acceleration = 0.5f;
     public float deceleration = 0.25f;
 
+    public static PlayerMovement player;
+
 
     // These two variables are used by beartraps to record how long and how much to slow the player by
     public static float slowDuration = 0f;
@@ -40,7 +42,8 @@ public class PlayerMovement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		speed = speedInit;		
+		speed = speedInit;
+        player = this;
 	}
 
     private void Update()
