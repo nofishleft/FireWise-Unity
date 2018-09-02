@@ -783,7 +783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedInit: 0.1
-  acceleration: 0.1
+  acceleration: 1
   deceleration: 2
 --- !u!114 &2001712199
 MonoBehaviour:
