@@ -11855,11 +11855,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4791868081210838, guid: 172b2cb7435f37040bd81590cf9e55d6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.501
+      value: -5.481
       objectReference: {fileID: 0}
     - target: {fileID: 4791868081210838, guid: 172b2cb7435f37040bd81590cf9e55d6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.317
+      value: -2.321
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391853001528920, guid: 172b2cb7435f37040bd81590cf9e55d6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399378264534138, guid: 172b2cb7435f37040bd81590cf9e55d6,
+        type: 2}
+      propertyPath: minX
+      value: -3.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399378264534138, guid: 172b2cb7435f37040bd81590cf9e55d6,
+        type: 2}
+      propertyPath: minY
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399378264534138, guid: 172b2cb7435f37040bd81590cf9e55d6,
+        type: 2}
+      propertyPath: maxX
+      value: 2.108
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399378264534138, guid: 172b2cb7435f37040bd81590cf9e55d6,
+        type: 2}
+      propertyPath: maxY
+      value: 5.918
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 172b2cb7435f37040bd81590cf9e55d6, type: 2}
