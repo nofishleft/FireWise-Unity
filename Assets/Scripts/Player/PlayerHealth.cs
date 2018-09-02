@@ -10,13 +10,20 @@ public class PlayerHealth : MonoBehaviour {
 
     public static float health;
 
+    public static AudioSource bounceaudio;
+    public static AudioClip bounceclip;
+    public static bool hasnotplayed = true;
+    private AudioSource[] allAudioSources;
+
     // Use this for initialization
     void Start () {
         health = healthMax;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        bounceaudio = gameObject.AddComponent<AudioSource>();
+        bounceclip = (AudioClip)Resources.Load("lake");
+    }
+
+    // Update is called once per frame
+    void Update () {
         float decay;
         float speedPercent;
 
@@ -27,6 +34,14 @@ public class PlayerHealth : MonoBehaviour {
         decay = healthDecay * (1 - moveFactor * speedPercent);
 
         health -= decay * Time.deltaTime;
-
+        if(GameVictory.victory && hasnotplayed){
+            allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+            foreach (AudioSource audioS in allAudioSources)
+            {
+                audioS.Stop();
+            }
+            bounceaudio.PlayOneShot(bounceclip);
+            hasnotplayed = false;
+        }
 	}
 }

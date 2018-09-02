@@ -5273,7 +5273,12 @@ Prefab:
     - target: {fileID: 114843537822661930, guid: b31d0922adfd074439601e6269f958b1,
         type: 2}
       propertyPath: damage
-      value: 7
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114843537822661930, guid: b31d0922adfd074439601e6269f958b1,
+        type: 2}
+      propertyPath: speed
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b31d0922adfd074439601e6269f958b1, type: 2}
@@ -7608,7 +7613,7 @@ Prefab:
     - target: {fileID: 114843537822661930, guid: b31d0922adfd074439601e6269f958b1,
         type: 2}
       propertyPath: damage
-      value: 7
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b31d0922adfd074439601e6269f958b1, type: 2}
@@ -7989,7 +7994,7 @@ Prefab:
     - target: {fileID: 114843537822661930, guid: b31d0922adfd074439601e6269f958b1,
         type: 2}
       propertyPath: damage
-      value: 7
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114843537822661930, guid: b31d0922adfd074439601e6269f958b1,
         type: 2}

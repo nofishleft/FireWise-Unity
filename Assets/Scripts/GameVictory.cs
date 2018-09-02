@@ -14,7 +14,7 @@ public class GameVictory : MonoBehaviour
     public int playerLayerID = 10; // Layer ID of the player
 
     float timeToWait = 0f;
-    bool victory = false;
+    public static bool victory = false;
 
     private void Start()
     {
@@ -28,8 +28,13 @@ public class GameVictory : MonoBehaviour
         Debug.Log("Collision with: " + col.gameObject.name);
         if (col.gameObject.layer == playerLayerID)
         {
-            col.gameObject.GetComponent<Animator>().SetBool("fire", false);
-            Debug.Log("Player Victory");
+
+            victory = true;
+
+            // Disable player's burning animation
+            col.gameObject.GetComponent<Animator>().SetBool("fire", false); 
+
+            // Fade in text message and panel
             fadeText.CrossFadeAlpha(255, fadeTextDuration, false);
             fadePanel.CrossFadeAlpha(255, fadePanelDuration, false);
         }

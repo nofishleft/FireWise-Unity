@@ -7398,6 +7398,16 @@ Prefab:
       propertyPath: m_UsedByEffector
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114470452862631056, guid: 172b2cb7435f37040bd81590cf9e55d6,
+        type: 2}
+      propertyPath: speedInstMin
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114470452862631056, guid: 172b2cb7435f37040bd81590cf9e55d6,
+        type: 2}
+      propertyPath: speedInstMax
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 172b2cb7435f37040bd81590cf9e55d6, type: 2}
   m_IsPrefabAsset: 0
