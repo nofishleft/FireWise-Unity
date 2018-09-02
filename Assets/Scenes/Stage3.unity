@@ -586,12 +586,12 @@ Prefab:
     - target: {fileID: 114399378264534138, guid: 172b2cb7435f37040bd81590cf9e55d6,
         type: 2}
       propertyPath: minX
-      value: -5.27
+      value: -5.96
       objectReference: {fileID: 0}
     - target: {fileID: 114399378264534138, guid: 172b2cb7435f37040bd81590cf9e55d6,
         type: 2}
       propertyPath: minY
-      value: -1.228
+      value: -1.28
       objectReference: {fileID: 0}
     - target: {fileID: 114399378264534138, guid: 172b2cb7435f37040bd81590cf9e55d6,
         type: 2}
@@ -602,6 +602,16 @@ Prefab:
         type: 2}
       propertyPath: maxY
       value: 6.374
+      objectReference: {fileID: 0}
+    - target: {fileID: 114470452862631056, guid: 172b2cb7435f37040bd81590cf9e55d6,
+        type: 2}
+      propertyPath: speedInstMin
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114470452862631056, guid: 172b2cb7435f37040bd81590cf9e55d6,
+        type: 2}
+      propertyPath: speedInstMax
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82843628805723522, guid: 172b2cb7435f37040bd81590cf9e55d6, type: 2}
