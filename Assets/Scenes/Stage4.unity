@@ -5431,7 +5431,7 @@ GameObject:
   - component: {fileID: 599356252}
   - component: {fileID: 599356251}
   - component: {fileID: 599356253}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5447,7 +5447,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.019678831, y: 1.1163021}
@@ -6617,6 +6617,11 @@ Prefab:
         type: 2}
       propertyPath: maxY
       value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 58770907351717384, guid: 172b2cb7435f37040bd81590cf9e55d6,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 172b2cb7435f37040bd81590cf9e55d6, type: 2}

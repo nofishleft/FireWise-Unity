@@ -21,11 +21,12 @@ public class GameVictory : MonoBehaviour
     }
 
     // If the player reaches the target area in a scene, they have won
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Collision with: " + col.gameObject.name);
         if (col.gameObject.layer == playerLayerID)
         {
+            col.gameObject.GetComponent<Animator>().SetBool("fire", false);
             Debug.Log("Player Victory");
             fadeText.CrossFadeAlpha(255, fadeTextDuration, false);
             fadePanel.CrossFadeAlpha(255, fadePanelDuration, false);
