@@ -72,11 +72,12 @@ public class EnemyPathing : MonoBehaviour {
                 targetWayPoint = wayPointList[currentWayPoint];
             Vector3 vectorToPlayer = PlayerMovement.player.transform.position - transform.position;
             if ((float) vectorToPlayer.sqrMagnitude <= (float) visionDistance * visionDistance) {
-                Debug.Log("test");
+                Debug.Log("test");                
                 RaycastHit2D hit = Physics2D.Linecast(transform.position, trackedPlayer.transform.position);
                 if (hit.collider != null && hit.collider.gameObject.layer == playerHitboxLayerID) enemySpotted = true;
                 Debug.Log(transform.position);
                 Debug.Log(trackedPlayer.transform.position);
+                Debug.Log(hit.collider);
                 Debug.Log(hit);
             }
         }

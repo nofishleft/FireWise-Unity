@@ -78,7 +78,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4498503205297998}
-  - component: {fileID: 58927355806201526}
+  - component: {fileID: 70734921866733906}
   m_Layer: 11
   m_Name: Hitbox
   m_TagString: Untagged
@@ -106,7 +106,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1345715810818682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.13126183, y: -0, z: -10}
+  m_LocalPosition: {x: 0, y: -0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4791868081210838}
@@ -132,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1020333018103302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5220606, y: -4.658736, z: 0.1}
+  m_LocalPosition: {x: -2.036, y: -5.434, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4391853001528920}
@@ -216,8 +216,8 @@ CircleCollider2D:
   m_Offset: {x: -0.01, y: -0.05}
   serializedVersion: 2
   m_Radius: 0.03
---- !u!58 &58927355806201526
-CircleCollider2D:
+--- !u!70 &70734921866733906
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -225,12 +225,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05}
-  serializedVersion: 2
-  m_Radius: 0.03
+  m_Offset: {x: -0.001826942, y: 0.007745981}
+  m_Size: {x: 0.105361104, y: 0.22229433}
+  m_Direction: 0
 --- !u!81 &81879219268285484
 AudioListener:
   m_ObjectHideFlags: 1
@@ -457,10 +457,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f96ec1452cfe042b17d754e522a856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -5.079
-  maxX: 1.539
-  minY: -1.273
-  maxY: 6.388
+  minX: -3.04
+  maxX: 2.108
+  minY: -6
+  maxY: 5.918
   cameraWidth: 2.6
   cameraHeight: 1.2
 --- !u!114 &114435511785270146
