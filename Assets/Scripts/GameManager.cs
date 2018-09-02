@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
     public static int[] scores;
 
     static int scenes;
-    public static int currentScene = 0; // First level starts at build index 0. The main menu should be the last scene in the build settings.
+    public static int currentScene = 1; // First level starts at build index 1. The main menu should be the first scene in the build settings.
 
     static bool playing = false;
 
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        scenes = SceneManager.sceneCountInBuildSettings - 1; // Subtract 1 as scene ID's start from zero
+        scenes = SceneManager.sceneCountInBuildSettings - 1; // The first scene 
         Debug.Log("Scenes = " + scenes);
         beatLevel = new int[scenes];
     }
@@ -73,10 +73,11 @@ public class GameManager : MonoBehaviour {
 
     void NextLevel() { 
         
-        // Debug.Log("Current level outcome: " + beatLevel[currentScene]);
+        Debug.Log("Current level outcome: " + beatLevel[currentScene]);
+        Debug.Log("Active scene buildID: " + SceneManager.GetActiveScene().buildIndex);
 
         // If a scene is currently running, do nothing until it reaches some outcome
-        if (SceneManager.GetActiveScene().buildIndex == currentScene)
+        if ((SceneManager.GetActiveScene().buildIndex) == currentScene)
             if (beatLevel[currentScene] == 1)
             {
                 Debug.Log("Beat Level");
@@ -85,7 +86,7 @@ public class GameManager : MonoBehaviour {
             {
                 // If the player is defeated, just restart the current scene.
                 Debug.Log("Playing = " + playing + " - due to defeat");
-                beatLevel[currentScene] = 0;
+                beatLevel[currentScene] = 1;
             } else
             {
                 // If we get here, the player hasn't won or lost yet, so do nothing.
