@@ -13,11 +13,18 @@ public class Watercooler : MonoBehaviour
 
     public int playerLayerID = 10; // ID of the layer the player is on
 
+    public static AudioSource drinkAudio;
+    public static AudioClip drinkClip;
+
     private void Start()
     {
         rend = GetComponent<Renderer>();
         rend.enabled = true;
+        drinkAudio = gameObject.AddComponent<AudioSource>();
+        drinkClip = (AudioClip)Resources.Load("waterget2_mixdown");
     }
+
+
 
     // If the player walks into this, heal them (but not above their maximum health)
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,6 +32,7 @@ public class Watercooler : MonoBehaviour
         Debug.Log(collision.gameObject.layer);
         if ((collision.gameObject.layer == playerLayerID) && rend.enabled)
         {
+            drinkAudio.PlayOneShot(drinkClip);
             PlayerHealth.health += healthRestoreFlat + (PlayerHealth.healthMax * healthRestorePercent);
             PlayerHealth.health = Mathf.Clamp(PlayerHealth.health, 0, PlayerHealth.healthMax);
             rend.enabled = false;
