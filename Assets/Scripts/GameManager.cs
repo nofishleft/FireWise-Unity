@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour {
 
         // While there are still scenes to be run, play them one after the other.
         // If they player gets through all the available scenes they'll be returned to the main menu.
-        if (currentScene < scenes)
+        if (currentScene <= scenes)
         {
             SceneManager.LoadSceneAsync(currentScene);
             Debug.Log("Active scene buildID: " + SceneManager.GetActiveScene().buildIndex);
