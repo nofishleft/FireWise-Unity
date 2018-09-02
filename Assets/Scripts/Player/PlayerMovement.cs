@@ -10,10 +10,14 @@ public class PlayerMovement : MonoBehaviour {
     public float acceleration = 0.5f;
     public float deceleration = 0.25f;
 
+
+    // These two variables are used by beartraps to record how long and how much to slow the player by
+    public static float slowDuration = 0f;
+    public static float slowFlat = 0f;
+    public static float slowPercent = 0f;
+
     public static float speed;
     string lastKey = "w";
-    static KeyCode[] strafekeys = new KeyCode[] { KeyCode.A, KeyCode.D };
-    static KeyCode[] walkkeys = new KeyCode[] { KeyCode.W, KeyCode.S };
 
     public static int xdir = 0;
     public static int ydir = 0;
@@ -96,6 +100,17 @@ public class PlayerMovement : MonoBehaviour {
         // From: https://unity3d.com/learn/tutorials/topics/multiplayer-networking/creating-player-movement-single-player
         var x = xdir * Time.deltaTime * speed;
 		var y = ydir * Time.deltaTime * speed;
+
+        // Adjust the player's speed if they've walked into a bear trap
+        if (slowDuration > 0)
+        {
+            x = x * (1 - slowPercent) - slowFlat;
+            y = y * (1 - slowPercent) - slowFlat;
+            slowDuration -= Time.deltaTime;
+        } else {
+            slowPercent = 0f;
+            slowFlat = 0f;
+        }
 
 		transform.Translate(x, y, 0);
 
