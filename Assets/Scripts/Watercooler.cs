@@ -1,0 +1,34 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Watercooler : MonoBehaviour
+{
+
+    bool consumed = false;
+
+    public Renderer rend;
+    public float healthRestoreFlat = 0f;
+    public float healthRestorePercent = 0.7f; // How much of the user's max health to restore
+
+    public int playerLayerID = 10; // ID of the layer the player is on
+
+    private void Start()
+    {
+        rend = GetComponent<Renderer>();
+        rend.enabled = true;
+    }
+
+    // If the player walks into this, heal them (but not above their maximum health)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.layer);
+        if ((collision.gameObject.layer == playerLayerID) && rend.enabled)
+        {
+            PlayerHealth.health += healthRestoreFlat + (PlayerHealth.healthMax * healthRestorePercent);
+            PlayerHealth.health = Mathf.Clamp(PlayerHealth.health, 0, PlayerHealth.healthMax);
+            rend.enabled = false;
+        }
+
+    }
+}
