@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour {
 
-    public int healthMax = 100;
+    public static float healthMax = 100;
     public float healthDecay = 1f; // How much health the player will lose per second
     public float moveFactor = 0.5f; // How much decay will be reduced by when the player is travelling at their max speed
 
