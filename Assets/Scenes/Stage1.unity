@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 377747857}
   - component: {fileID: 377747856}
   - component: {fileID: 377747855}
+  - component: {fileID: 377747858}
   m_Layer: 0
   m_Name: Campfire
   m_TagString: Untagged
@@ -207,6 +208,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &377747858
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 377747854}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.06}
+  m_Size: {x: 0.18, y: 0.04}
+  m_Direction: 1
 --- !u!1 &599356250
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +300,7 @@ GameObject:
   - component: {fileID: 1149048421}
   - component: {fileID: 1149048420}
   - component: {fileID: 1149048419}
+  - component: {fileID: 1149048422}
   m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
@@ -598,6 +615,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1149048422
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1149048418}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.324, y: -5.27}
+  m_Size: {x: 0.44, y: 0.14}
+  m_Direction: 1
 --- !u!1 &1416352389
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +796,7 @@ GameObject:
   - component: {fileID: 2001712202}
   - component: {fileID: 2001712204}
   - component: {fileID: 2001712203}
+  - component: {fileID: 2001712205}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -890,7 +923,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.01}
-  m_Size: {x: 0.06, y: 0.11}
+  m_Size: {x: 0.06, y: 0.14}
   m_Direction: 0
 --- !u!50 &2001712204
 Rigidbody2D:
@@ -912,3 +945,14 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2001712205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2001712197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da7b49ca381a1f488ae02bb95eca35c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

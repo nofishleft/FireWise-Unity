@@ -13,28 +13,32 @@ public class PlayerMovement : MonoBehaviour {
 	public static float speed;
 	string lastKey = "w";
 
-    int xdir = 0;
-    int ydir = 0;
+    public static int xdir = 0;
+    public static int ydir = 0;
 
 	// Use this for initialization
 	void Start () {
 		speed = speedInit;		
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-		// If the user is holding down the same key as the last time, we should increase their speed
-		if (Input.GetKey(lastKey)) {
+    // Update is called once per frame
+    void Update() {
+
+        // If the user is holding down the same key as the last time, we should increase their speed
+        if (Input.GetKey(lastKey)) {
             //Debug.Log("Accelerating");
             speed += acceleration * Time.deltaTime;
-		} else {
+        } else {
             //Debug.Log("Decelerating");
-			speed -= deceleration * Time.deltaTime;
-		}
+            speed -= deceleration * Time.deltaTime;
+        }
 
-		// The player's speed should never go over speedMax or under speedMin
-        speed = Mathf.Clamp(speed, speedMin, speedMax);
+        // The player's speed should never go over speedMax or under speedMin
+        if (PlayerHealth.health > 0f) {
+            speed = Mathf.Clamp(speed, speedMin, speedMax);
+        } else {
+            speed = 0f;
+        }
 
         if (Input.GetKey("w"))
         {
