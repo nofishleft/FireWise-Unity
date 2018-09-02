@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     public float speedInit = 2.2f;
-    public static float speedMax = 1.5f; // Max speed. I don't know why this doesn't show up in the editor.
+    public static float speedMax = 0.7f; // Max speed. I don't know why this doesn't show up in the editor.
     public static float speedMin = 0.3f;
     public float acceleration = 0.5f;
     public float deceleration = 0.25f;
