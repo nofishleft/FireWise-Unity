@@ -9,6 +9,7 @@ public class PlayerAnimationController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
+        anim.SetBool("fire", true);
         
 	}
 	
